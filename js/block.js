@@ -356,18 +356,19 @@ function getEntityMarkup(
     };width: ${entity.data.width}"/>`;
   }
   if (entity.type === "EMBEDDED_LINK") {
-    return `<iframe width="${entity.data.width}" height="${
-      entity.data.height
-    }" src="${entity.data.src}" frameBorder="0"></iframe>`;
+    if (entity.videoType === "internal-video") {
+      return `<video width="${entity.data.width}" height="${
+        entity.data.height
+      }" src="${entity.data.src}" controls="${
+        entity.data.controls
+      }" frameBorder="0"></video>`;
+    } else {
+      return `<iframe width="${entity.data.width}" height="${
+        entity.data.height
+      }" src="${entity.data.src}" frameBorder="0"></iframe>`;
+    }
   }
 
-  if (entity.type === "VIDEO") {
-    return `<video width="${entity.data.width}" height="${
-      entity.data.height
-    }" src="${entity.data.src}" controls="${
-      entity.data.controls
-    }" frameBorder="0"></video>`;
-  }
   return text;
 }
 
