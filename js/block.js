@@ -356,7 +356,8 @@ function getEntityMarkup(
     };width: ${entity.data.width}"/>`;
   }
   if (entity.type === "EMBEDDED_LINK") {
-    if (entity.videoType === "internal-video") {
+    console.log(entity.data);
+    if (entity.data.videoType === "internal-video") {
       return `<video width="${entity.data.width}" height="${
         entity.data.height
       }" src="${entity.data.src}" controls="${
