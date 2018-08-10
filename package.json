@@ -30,10 +30,6 @@
     "sinon": "^4.1.4",
     "size-limit": "^0.14.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Faliszek/draftjs-to-html.git"
-  },
   "scripts": {
     "size": "size-limit",
     "clean": "rimraf lib",
